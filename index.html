@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVE</title>
+    
+    
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            background-color: #f0f0f0;
+        }
+        .book {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            perspective:2000px;
+        }
+        .page1, .page2{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            border: 1px solid #ccc;
+            transition: transform 1s;
+            transform-origin: right;
+        }
+        .page1 {
+            background: url('coverpage.png') no-repeat center;
+            background-size: cover;
+            z-index: 2;
+        }
+        .page2 {
+            background: linear-gradient(0deg, rgba(255,0,127,1) 0%, rgba(223,11,132,1) 0%, rgba(146,36,143,1) 39%, rgba(111,48,148,1) 98%);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        .book:hover .page1 {
+            transform: rotateY(180deg);
+        }
+        main{
+            color: white;
+            text-align: center;
+        }
+        h4{
+            font-size: 14px;
+        }
+        p{
+            font-size: 8px;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        .container{
+            text-align: center;
+        }
+        .box{
+            display:inline-block;
+            width: 50px;
+            height: 50px;
+        } 
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .music-player {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+           
+            padding: 5px;
+            
+            cursor: pointer;
+        }
+        .music-player img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="book">
+        <div class="page1"></div>
+        <div class="page2">
+            <main>
+                <h4>HELLO LOVE</h4>
+                <hr>
+                <p>Hindi ko inakalang may magmamahal sa akin nang <br> 
+                    ganito buo, tapat, at walang pag-aalinlangan.<br> 
+                    Nakikita mo ako, tinatanggap, at pinipili araw-araw.<br> 
+                    Ikaw na yung naging pahinga ko sa buhay kong magulo<br>
+                    kaya lagi kita natutulugan hehehe,<br>Naaalala ko pa dati nung wala ka<br>
+                    Nararanasan ko na lamang sumaya kapag<br> kasama ang barkada HAHAHA <a href="https://youtu.be/fsRpQgUIyn8?si=UoTdASuUVxPGQK6N">EXB yarn?</a> <br>
+                    di pa naman ako magaling sa mga long messages nato,<br> hay naku Ken.<br>
+                    <br>
+                    i just wanna say na mahal kita and we know na <br>napakilala na agad kita 
+                    na gf ko sa parents ko but iwanna<br> make ligaw ligaw thing padin,<br> idk how coz its ldr but ill figure it
+                    out nalang,<br>i love you kahit gabi gabi nako nauuna sayo matulog.
+                    
+                   </p>
+                <div class="container">
+                    <div class="box">
+                        <a href="https://youtu.be/hz1X9VLMjWc?si=rHRSZWsbgiHiC7V1"><img src="img10.jpg" alt=""></a>
+                    </div>
+                    <div class="box">
+                        <a href="https://youtu.be/hz1X9VLMjWc?si=rHRSZWsbgiHiC7V1"><img src="img2.jpg" alt=""></a>
+                    </div>
+                    <div class="box">
+                        <img src="img1.jpg" alt="">
+                    </div>
+                </div>
+            </main>
+            <div class="music-player" onclick="toggleMusic()">
+                <img id="music-icon" src="play.png" alt="Play">
+            </div>
+            <audio id="bg-music" src="Araw_araw_ng_puso.mp3"></audio>
+        </div>
+    </div>
+
+    <script>
+        function toggleMusic() {
+            var music = document.getElementById('bg-music');
+            var icon = document.getElementById('music-icon');
+            if (music.paused) {
+                music.play();
+                icon.src = '/images/pause.png';
+            } else {
+                music.pause();
+                icon.src = '/images/play.png';
+            }
+        }
+    </script>
+</body>
+</html>
